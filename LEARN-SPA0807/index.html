@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JQuery SPA 单页应用</title>
+  <link rel="stylesheet" href="/css/spa.css" type="text/css">
+  <link rel="stylesheet" href="/css/spa.shell.css" type="text/css">
+</head>
+<body>
+<!-- <a href="layout.html">shell</a>
+页面会从头到尾，重新加载，会白一下 -->
+<div id="spa">
+</div>
+</body>
+<script src="http://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script src="/js/spa.js"></script>
+<script src="/js/spa.shell.js"></script>
+<script>
+  $(function () {
+    spa.initModule($('#spa'));
+  })
+</script>
+</html>
