@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery 代码片段</title>
+</head>
+<body>
+  <img src="www.baidu.com/zxc.png" alt="周星驰" width="300" height="200" />
+  <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+  $(function () {
+    // 浏览器嗅探
+    // 正则
+    // ?当设备宽度小于480时，alert是手机
+    var isPhone = false
+    $(window).resize(function () {
+      console.log($(window).width())
+      if ($(window).width() < 480) {
+        if (isPhone) return;
+        isPhone = true;
+        console.log('手机浏览')
+      }
+    })
+    console.log(navigator.userAgent)
+    if (navigator.userAgent.match(/msie/i)) {
+      alert('I am an old fashioned Internet Explorer')
+    }
+    $('img').error(function () {
+      $(this).attr('src', 'http://ac-pvjnkart.clouddn.com/ffef641a628e2b5a7108.png')
+    })
+  })
+  </script>
+</body>
+</html>

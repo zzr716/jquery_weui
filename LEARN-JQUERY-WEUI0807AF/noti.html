@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Notification</title>
+  <link href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://jqweui.com/dist/demos/css/demos.css">
+</head>
+<body ontouchstart>
+  <header class="demos-header">
+    <h1 class="demos-title">Notification</h1>
+  </header>
+  <div class="demos-content-padded">
+    <a href="javascript:;" id="show-notification" class="weui-btn weui-btn_primary">显示通知</a>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://jqweui.com/dist/lib/fastclick.js"></script>
+  <script>
+  // FastClick让click事件相应更快
+  $(function () {
+    FastClick.attach(document.body);
+  })
+  </script>
+  <script src="https://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+  <script>
+  $(function () {
+    $(document).on('click', '#show-notification', function () {
+      // jQuery扩展
+      $.noti({
+        title: '中奖了',
+        text: '点击领取腾讯lol杯二等奖',
+        media: '<img src="http://jqweui.com/dist/demos/images/present.png" />',
+        data: {
+          message: '逗你玩'
+        },
+        time: 3000,
+        onClick: function (data) {
+          $.alert(data.message);
+        }
+      })
+    })
+  })
+  </script>
+</body>
+</html>

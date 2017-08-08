@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery weui</title>
+  <link href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://jqweui.com/dist/demos/css/demos.css">
+</head>
+<body>
+<div class="weui-pull-to-refresh__layer">
+  <div class="weui-pull-to-refresh__arrow"></div>
+  <div class="weui-pull-to-refresh__preloader"></div>
+  <div class="down">下拉刷新</div>
+  <div class="up">释放刷新</div>
+  <div class="refresh">正在刷新</div>
+</div>
+<h1 class="demos-title">下拉刷新</h1>
+<p>Time: <span id="time"></span></p>
+<div class="demos-content-padded" id="list">
+  <p>《世界著名计算机教材精选·人工智能:一种现代的方法(第3版)》是最权威、最经典的人工智能教材，
+    已被全世界100多个国家的1200多所大学用作教材。</p>
+  <p>《世界著名计算机教材精选·人工智能:一种现代的方法(第3版)》是最权威、最经典的人工智能教材，
+    已被全世界100多个国家的1200多所大学用作教材。</p>
+  <p>《世界著名计算机教材精选·人工智能:一种现代的方法(第3版)》是最权威、最经典的人工智能教材，
+    已被全世界100多个国家的1200多所大学用作教材。</p>
+  <p>《世界著名计算机教材精选·人工智能:一种现代的方法(第3版)》是最权威、最经典的人工智能教材，
+    已被全世界100多个国家的1200多所大学用作教材。</p>
+  <p>《世界著名计算机教材精选·人工智能:一种现代的方法(第3版)》是最权威、最经典的人工智能教材，
+    已被全世界100多个国家的1200多所大学用作教材。</p>
+</div>
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+<script>
+$(function () {
+  $(document.body).pullToRefresh().on('pull-to-refresh', function () {
+    setTimeout(function () {
+      $('#time').text(new Date);
+      $(document.body).pullToRefreshDone();
+    }, 2000)
+  })
+})
+</script>
+</body>
+
+</html>
